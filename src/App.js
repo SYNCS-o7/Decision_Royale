@@ -1,9 +1,10 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Compare from './components/Compare';
 import EnterForm from './components/EnterForm';
 
 function App() {
+  
   const [options, setOptions] = useState(["Cheese", "Potato", "Sasuage", "Bacon", "Lettuce"]);
   const [mode, changeMode] = useState("add");
 
@@ -23,8 +24,13 @@ function App() {
     setOptions(copy);
   }
 
-
   let displayed = <></>;
+
+  // if (mode === "timeout") {
+  //   
+
+  // } else if (mode === "add") {
+  
   if (mode === "add") {
     displayed = 
     <>
