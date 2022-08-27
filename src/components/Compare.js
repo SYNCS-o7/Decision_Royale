@@ -38,31 +38,25 @@ function Compare({
         }
     };
 
-<<<<<<< HEAD
     const randomChoice = () => {
         let choice = Math.round(Math.random());
         selectOption(choice);
     }
 
-=======
-    let randomPickInfo = '';
 
     if ((TIMEOUT - diff) <= 0) {
-        let select = Math.floor(Math.random()*2);
-        removeOption(options[select]);
+        randomChoice();
 
         let now = new Date().getTime();
         setTime(now);
         setDiff(0);
 
-        randomPickInfo = 
         <>
             chosen {options[0]};
         </>
     }
 
 
->>>>>>> timer
     return(
         <div>
             Pick your option
@@ -73,25 +67,16 @@ function Compare({
             <button onClick={() => {selectOption(1)}}>
                 {options[1]}
             </button>
-<<<<<<< HEAD
-            <br></br>
             <button onClick={() => {randomChoice()}}>
                 Can't decide
             </button>
-=======
 
             <br />
             time left {Math.floor((TIMEOUT - diff)/1000)}
 
-            <br/>
 
-            {randomPickInfo}
-
-
->>>>>>> timer
         </div>
     );
-    
 }
 
 export default Compare;

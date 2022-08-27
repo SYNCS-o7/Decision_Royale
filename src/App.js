@@ -53,11 +53,6 @@ function App() {
 
     displayed =
     <>
-      <div>
-        {options.map((option) => {
-          return <div>{option}</div>;
-          })}
-      </div> 
       <h3>Pick your favourite</h3>
       <Compare options={ options } removeOption={ removeOption }/>
     </>
