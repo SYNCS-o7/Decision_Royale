@@ -2,10 +2,12 @@ import './App.css';
 import React, { useState } from 'react';
 import Compare from './components/Compare';
 import EnterForm from './components/EnterForm';
+import { begin, isFinished, getWinner, getChoices, makeChoice} from './comparisons/Tournament';
 
 function App() {
   const [options, setOptions] = useState(["Cheese", "Potato", "Sasuage", "Bacon", "Lettuce"]);
   const [mode, changeMode] = useState("add");
+  const [pair, setPair] = useState("");
 
   function addOption(newOp) {
     let copy = [...options];
@@ -23,6 +25,18 @@ function App() {
     setOptions(copy);
   }
 
+  function selectOption(op) {
+    makeChoice(op);
+
+    if (isFinished()) {
+      setOptions(getWinner());
+      changeMode("result");
+      return;
+    }
+
+    setPair(getChoices());
+  }
+
 
   let displayed = <></>;
   if (mode === "add") {
@@ -35,7 +49,7 @@ function App() {
       </div> 
 
       <EnterForm addTask = {addOption} />
-      <button onClick={() => {changeMode("compare")}}>Ready to decide</button>
+      <button onClick={() => {changeMode("compare"); begin(options); setPair(getChoices());}}>Ready to decide</button>
     </>
 
 
@@ -45,15 +59,11 @@ function App() {
       return;
     }
 
+
     displayed =
     <>
-      <div>
-        {options.map((option) => {
-          return <div>{option}</div>;
-          })}
-      </div> 
       <h3>Pick your favourite</h3>
-      <Compare options={ options } removeOption={ removeOption }/>
+      <Compare options={ pair } selectOption={ selectOption }/>
     </>
 
   } else if (mode === "result") {

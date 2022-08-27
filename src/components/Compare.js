@@ -2,32 +2,26 @@ import React from 'react'
 
 function Compare({
     options,
-    removeOption,
-    addOption
+    selectOption
 }) {
 
-    const selectOption = (n) => {
-        
-        if (n===0) {
-            removeOption(options[1]);
-        } else {
-            removeOption(options[0]);
-        }
+    const select = (n) => {
+        selectOption(options[n]);
     };
 
     const randomChoice = () => {
         let choice = Math.round(Math.random());
-        selectOption(choice);
+        select(choice);
     }
 
     return(
         <div>
             Pick your option
             <br></br>
-            <button onClick={() => {selectOption(0)}}>
+            <button onClick={() => {select(0)}}>
                 {options[0]}
             </button>
-            <button onClick={() => {selectOption(1)}}>
+            <button onClick={() => {select(1)}}>
                 {options[1]}
             </button>
             <br></br>
