@@ -17,7 +17,7 @@
     background-size: cover;
     margin: -8px;
     padding: 0;
-
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.1);
 
 }
 
@@ -91,11 +91,11 @@ h1 {
     border: 0px;
     color: white;
     margin: 2px 0 2px 0;
-    background: rgba(119, 119, 119, 0.5);
+    background: rgba(75, 75, 75, 0.6);
 }
 
 .strategy-select > button:hover {
-    background: rgba(72, 72, 72, 0.5);
+    background: rgba(32, 32, 32, 0.6);
     transition: all ease-in 0.3s;
 }
 
@@ -119,7 +119,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(40px);
+    backdrop-filter: blur(20px);
 }
 
 .light_text{
@@ -149,7 +149,7 @@ h1 {
     letter-spacing: 1.5px;
     background: rgba(255,255,255,0.2);
     backdrop-filter: blur(14px);
-    box-shadow: 0px 0px 20px #8da2c4;
+    box-shadow: 0px 0px 20px #1e1e1e42;
 
     animation: zoom 1s ease 1;
 }
@@ -162,8 +162,6 @@ h1 {
         transform: scale(1);
     }
 }
-
-
 
 .text {
     font-family: 'pfont';
@@ -184,19 +182,19 @@ h1 {
     font-family: 'pfont';
     background-color: white; /* Green */
     border: none;
-    color: black;
+    color: white;
     padding: 15px 100px;
     text-align: center;
     text-decoration: none;
     font-size: 20px;
     letter-spacing: 1.5px;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(14px);
-    box-shadow: 0px 0px 20px #8da2c4;
+    background: rgba(75, 75, 75, 0.6);
+    backdrop-filter: jblur(14px);
+    box-shadow: 0px 0px 20px #1e1e1e;
     
 }
 
 .back:hover {
-    background: rgba(255,255,255,0.5);
+    background: rgba(75, 75, 75, 0.9);
     transition: all ease 0.3s;
 }
