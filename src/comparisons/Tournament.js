@@ -1,4 +1,4 @@
-var pairs;
+var remaining;
 var chosen;
 var eliminate;
 
@@ -14,58 +14,58 @@ function shuffle(array) {
   return array;
 }
 
-function begin(options) {
+function begin_tour(options) {
   if (options.length < 2) {
     console.log("Not enough options.");
   }
   options = options.slice();
   // shuffle(options);
-  pairs = options.slice(0, ~~(options.length / 2) * 2);
+  remaining = options.slice(0, ~~(options.length / 2) * 2);
   chosen = options.length % 2 ? [options[options.length - 1]] : [];
   eliminate = [];
 }
 
-function isFinished() {
-  return pairs.length == 0 && chosen.length == 1;
+function isFinished_tour() {
+  return remaining.length == 0 && chosen.length == 1;
 }
 
-function getWinner() {
-  if (!isFinished()) {
+function getWinner_tour() {
+  if (!isFinished_tour()) {
     console.log("Not finished.");
     return;
   }
   return chosen;
 }
 
-function getChoices() {
-  if (isFinished()) {
+function getChoices_tour() {
+  if (isFinished_tour()) {
     console.log("Finished.");
     return;
   }
-  if (pairs.length == 0) {
+  if (remaining.length == 0) {
     let options = chosen.slice();
-    pairs = options.slice(0, ~~(options.length / 2) * 2);
+    remaining = options.slice(0, ~~(options.length / 2) * 2);
     chosen = options.length % 2 ? [options[options.length - 1]] : [];
   }
 
-  return pairs.slice(0, 2);
+  return remaining.slice(0, 2);
 }
 
-function makeChoice(opt) {
-  if (isFinished()) {
+function makeChoice_tour(opt) {
+  if (isFinished_tour()) {
     console.log("Finished.");
     return
   }
-  if (!pairs.slice(0, 2).includes(opt)) {
+  if (!remaining.slice(0, 2).includes(opt)) {
     console.log("Invalid choice.");
     return;
   }
   chosen.push(opt);
-  eliminate.push(opt === pairs[0] ? pairs[1] : pairs[0]);
-  pairs.splice(0, 2);
+  eliminate.push(opt === remaining[0] ? remaining[1] : remaining[0]);
+  remaining.splice(0, 2);
 }
 
-export { begin, isFinished, getWinner, getChoices, makeChoice }
+export { begin_tour, isFinished_tour, getWinner_tour, getChoices_tour, makeChoice_tour }
 
 // begin(["A", "B", "C", "D", "E"]);
 // console.log(getChoices());

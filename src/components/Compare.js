@@ -46,7 +46,6 @@ function Compare({
         let now = new Date().getTime();
         setTime(now);
         setDiff(0);
-        console.log("Choice ", n, " ", options[n]);
         selectOption(options[n]);
     }
 
@@ -69,6 +68,7 @@ function Compare({
             <button onClick={() => {select(1)}}>
                 {options[1]}
             </button>
+            <br/>
             <button onClick={() => {randomChoice()}}>
                 Can't decide
             </button>

@@ -15,31 +15,31 @@ function shuffle(array) {
   return array;
 }
 
-export function begin(options) {
+export function begin_king(options) {
   if (options.length < 2) {
     console.log("Not enough options.");
   }
   remaining = options.slice();
   eliminate = [];
   shuffle(remaining);
-  king = options.shift();
-  oppo = options.shift();
+  king = remaining.shift();
+  oppo = remaining.shift();
 }
 
-export function isFinished() {
+export function isFinished_king() {
   return remaining.length == 0;
 }
 
-export function getWinner() {
-  if (!isFinished()) {
+export function getWinner_king() {
+  if (!isFinished_king()) {
     console.log("Not finished.");
     return;
   }
   return king;
 }
 
-export function getChoices() {
-  if (isFinished()) {
+export function getChoices_king() {
+  if (isFinished_king()) {
     console.log("Finished.");
     return;
   }
@@ -49,8 +49,8 @@ export function getChoices() {
   return [king, oppo];
 }
 
-export function makeChoice(opt) {
-  if (isFinished()) {
+export function makeChoice_king(opt) {
+  if (isFinished_king()) {
     console.log("Finished.");
   }
   if (opt !== king || opt !== oppo) {

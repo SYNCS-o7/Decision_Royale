@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import Compare from './components/Compare';
 import EnterForm from './components/EnterForm';
-import { begin, isFinished, getWinner, getChoices, makeChoice} from './comparisons/Tournament';
+import { setStrategy, begin, isFinished, getWinner, getChoices, makeChoice } from './comparisons/Comparisons.js';
 
 function App() {
   
@@ -55,7 +55,19 @@ function App() {
       </div> 
 
       <EnterForm addTask = {addOption} />
-      <button onClick={() => {changeMode("compare"); begin(options); setPair(getChoices());}}>Ready to decide</button>
+      <button onClick={() => {
+          setStrategy("KingHill");
+          changeMode("compare");
+          begin(options);
+          setPair(getChoices());
+        }}>Elimination</button>
+      <button onClick={() => {
+          setStrategy("Tournament");
+          changeMode("compare");
+          begin(options);
+          setPair(getChoices());}}>
+        Tournament
+      </button>
     </>
 
 
