@@ -8,7 +8,7 @@ function App() {
   
   const [options, setOptions] = useState(["Cheese", "Potato", "Sasuage", "Bacon", "Lettuce"]);
   const [mode, changeMode] = useState("add");
-  const [pair, setPair] = useState("");
+  const [pair, setPair] = useState(["", ""]);
 
   function addOption(newOp) {
     let copy = [...options];
@@ -38,7 +38,9 @@ function App() {
       return;
     }
 
-    setPair(getChoices());
+    let choices = getChoices();
+    console.log(choices);
+    setPair(choices);
   }
 
   let displayed = <></>;

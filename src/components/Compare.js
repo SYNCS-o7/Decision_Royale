@@ -12,36 +12,52 @@ function Compare({
         var updateTime = setInterval(() => {
             let now = new Date().getTime();
             setDiff(now - time);
-            if (diff > TIMEOUT) {
-              setTime(now);
-            }
+
+            if (diff >= TIMEOUT) setTime(now);
+
         });
         return () => {
           clearInterval(updateTime);
         }
       }, [time]);
 
-    const randomChoice = () => {
-        let choice = Math.round(Math.random());
-        select(choice);
-    }
+
+    useEffect(() => {
+        const listener = event => {
+            console.log(event.code)
+            if(event.code === "ArrowLeft") {
+                select(0);
+            }
+            if (event.code === "ArrowRight") {
+                select(1);
+            }
+            if (event.code === "ArrowDown") {
+                randomChoice();
+            }
+        };
+
+        document.addEventListener("keydown", listener);
+        return () => {
+            document.removeEventListener("keydown", listener);
+        };
+    }, [options]);
 
     const select = (n) => {
         let now = new Date().getTime();
         setTime(now);
         setDiff(0);
+        console.log("Choice ", n, " ", options[n]);
         selectOption(options[n]);
     }
 
-
-    if ((TIMEOUT - diff) <= 0) {
-        randomChoice();
-
-        let now = new Date().getTime();
-        setTime(now);
-        setDiff(0);
+    const randomChoice = () => {
+        let choice = Math.round(Math.random());
+        select(choice);
     }
 
+    if (diff >= TIMEOUT) {
+        randomChoice();
+    }
 
     return(
         <div>
