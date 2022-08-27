@@ -57,13 +57,18 @@ function App() {
     </>
 
   } else if (mode === "result") {
-    displayed = 
-    <p>
-      <h3>
-        Your decision is
-      </h3>
-      {options[0]}
-    </p>
+    displayed =
+    <>
+      <p>
+        <h3>
+          Your decision is
+        </h3>
+        {options[0]}
+      </p>
+      <button onClick={() => {changeMode("add"); setOptions([])}}>
+        Make another decision
+      </button>
+    </>
   }
 
   return (
