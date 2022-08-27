@@ -1,10 +1,11 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Compare from './components/Compare';
 import EnterForm from './components/EnterForm';
 import { begin, isFinished, getWinner, getChoices, makeChoice} from './comparisons/Tournament';
 
 function App() {
+  
   const [options, setOptions] = useState(["Cheese", "Potato", "Sasuage", "Bacon", "Lettuce"]);
   const [mode, changeMode] = useState("add");
   const [pair, setPair] = useState("");
@@ -15,6 +16,8 @@ function App() {
     setOptions(copy);
   }
 
+  /*
+
   function removeOption(op) {
     let copy = [];
     for (let i = 0; i < options.length; i++) {
@@ -24,12 +27,13 @@ function App() {
     }
     setOptions(copy);
   }
+  */
 
   function selectOption(op) {
     makeChoice(op);
 
     if (isFinished()) {
-      setOptions(getWinner());
+      setOptions([getWinner()]);
       changeMode("result");
       return;
     }
@@ -37,8 +41,8 @@ function App() {
     setPair(getChoices());
   }
 
-
   let displayed = <></>;
+  
   if (mode === "add") {
     displayed = 
     <>
