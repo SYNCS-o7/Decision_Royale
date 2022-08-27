@@ -7,8 +7,8 @@ function App() {
   const [options, setOptions] = useState(["Cheese", "Potato", "Sasuage", "Bacon", "Lettuce"]);
   const [mode, changeMode] = useState("add");
 
-  const [optionPair, compare] = useState(['', '']);
-  const [rankedPair, rankPair] = useState(['', '']);
+  // const [optionPair, compare] = useState(['', '']);
+  // const [rankedPair, rankPair] = useState(['', '']);
   
 
   function addOption(newOp) {
@@ -17,31 +17,18 @@ function App() {
     setOptions(copy);
   }
 
-  function removeOption(Op) {
+  function removeOption(op) {
     let copy = [];
     for (let i = 0; i < options.length; i++) {
-      if(options[i] !== rankedPair[1]) {
+      if(options[i] !== op) {
         copy.push(options[i]);
       }
 
     }
     setOptions(copy);
+
   }
 
-  const beginComparing = () => {
-
-    if (options.length <= 1) {
-      changeMode("result");
-      return;
-    }
-    compare([options[0], options[1]]);
-  }
-  
-  const optionSelected = () => {
-    console.log("Selected " , rankedPair[0]);
-    removeOption(rankedPair[1]);
-    beginComparing();
-  }
 
   let displayed = <></>;
   if (mode === "add") {
@@ -54,11 +41,16 @@ function App() {
       </div> 
 
       <EnterForm addTask = {addOption} />
-      <button onClick={() => {changeMode("compare"); beginComparing()}}>Ready to decide</button>
+      <button onClick={() => {changeMode("compare")}}>Ready to decide</button>
     </>
 
 
   } else if (mode === "compare") {
+    if (options.length <= 1) {
+      changeMode("result");
+      return;
+    }
+
     displayed =
     <>
       <div>
@@ -67,14 +59,15 @@ function App() {
           })}
       </div> 
       <h3>Pick your favourite</h3>
-      <Compare options={[optionPair[0], optionPair[1]]} rank={rankPair} selected={optionSelected}/>
+      <Compare options={ options } removeOption={ removeOption }/>
     </>
 
-  } else if (mode==="result") {
+  } else if (mode === "result") {
+    displayed = 
     <p>
-      <h1>
+      <h3>
         Your decision is
-      </h1>
+      </h3>
       {options[0]}
     </p>
   }
