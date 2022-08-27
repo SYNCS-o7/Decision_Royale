@@ -59,14 +59,31 @@ function Compare({
         randomChoice();
     }
 
+    let active = 'begin';
+    if (diff > 100) {
+        active = 'full'
+    }
+
+    let tran1 = 200;
+    let left_button = '';
+    let right_button = '';
+    if (diff < tran1) {
+        let percent = diff / tran1;
+        left_button = {opacity: `${percent}`, scale: `${percent}`}
+        right_button = {opacity: `${percent}`, scale: `${percent}`}
+    } else if (diff >= tran1) {
+        left_button = {opacity: `1`, scale: `1`}
+        right_button = {opacity: `1`, scale: `1`}
+    }
+
     return(
         <div className='choices'>
             <div className="pair-decision">
-                <button onClick={() => {select(0)}}>
+                <button style={left_button} onClick={() => {select(0)}}>
                     {options[0]}
                 </button>
                 <h1 className='inbetween'>or</h1>
-                <button onClick={() => {select(1)}}>
+                <button style={right_button} onClick={() => {select(1)}}>
                     {options[1]}
                 </button>
             </div>
