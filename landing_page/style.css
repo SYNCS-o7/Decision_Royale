@@ -19,6 +19,12 @@ html, body {
     overflow: hidden;
 }
 
+body {
+    background-image: url("251503200_140139771647471_383115556281802679_n.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 .container {
     height: 100%;
     width: 100%;
@@ -34,7 +40,6 @@ html, body {
 .list_container {
     align-self: right;
     grid-column: 2;
-    outline: solid;
     height: 100%;
     width: 100%;
 }
@@ -44,6 +49,7 @@ h1 {
     text-align: center;
     align-self: center;
     font-family: 'hfont';
+    color: white;
     font-size: 80px;
     letter-spacing: 4px;
     margin-bottom: 35px;
@@ -51,7 +57,7 @@ h1 {
 
 .option_input {
     display: inline;
-    border-radius: 15%;
+    border-radius: 20px;
     padding: 15px;
     width: 60%;
     text-align: center;
@@ -83,7 +89,30 @@ h1 {
 }
 
 .pain {
-    margin: 5px;
+    display: block;
+    margin: auto;
+    min-width: 200px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'pfont';
+    font-size: 19px;
+    letter-spacing: 1.5px;
+    align-self: center;
+    background-color: white;
+    z-index: 2;
+    max-width: 300px;
+}
+
+.pain:hover {
+    background-color:crimson;
+}
+
+.gonext {
+    display: block;
+    margin: auto;
+    min-width: 200px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-family: 'pfont';
     font-size: 19px;
     letter-spacing: 1.5px;
@@ -91,6 +120,20 @@ h1 {
     background-color: white;
 }
 
-.pain:hover {
-    background-color: lightgray;
+.gonext:hover {
+    background-color:chartreuse;
+}
+
+.list_box {
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right:auto;
+    display:block;
+    min-height: 400px;
+    min-width: 400px;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 5px;
 }
