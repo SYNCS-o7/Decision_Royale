@@ -49,6 +49,8 @@ h1 {
     font-size: 5rem;
     text-align: center;
 
+    padding-bottom: 30px;
+
     border-style: solid;
     border-width: 0 0 3px 0;
 }
@@ -108,7 +110,7 @@ h1 {
     width: 50%;
 
 
-    background-color: rgba(255,255,255,0.4);
+    background-color: rgba(255,255,255,0.15);
     box-shadow: 0px 0px 20px #8da2c4;
     border-radius: 20px;
     padding: 5px;
@@ -117,6 +119,12 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(40px);
 }
 
+.light_text{
+    text-align: center;
+    font-family: 'pfont';
+    font-size: 30px;
+    letter-spacing: 0px;
+}

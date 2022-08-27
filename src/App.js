@@ -76,7 +76,8 @@ function App() {
 
     displayed =
     <>
-      <h3>Pick your favourite</h3>
+      <div className='space' />
+      <h1 class="light_text">Choose your preference.</h1>
       <Compare options={ pair } selectOption={ selectOption }/>
     </>
 
@@ -106,9 +107,6 @@ function App() {
           {displayed}
         </div>
       </div>
-    
-
-    
     </div>
   );
 }

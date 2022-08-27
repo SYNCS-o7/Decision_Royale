@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react'
+import './Compare.css';
 
 function Compare({
     options,
     selectOption
 }) {
-    const TIMEOUT = 3000;
+    const TIMEOUT = 5000;
     const [time, setTime] = useState(new Date().getTime());
     const [diff, setDiff] = useState(0);
 
     useEffect(() => {
         var updateTime = setInterval(() => {
+
             let now = new Date().getTime();
             setDiff(now - time);
 
             if (diff >= TIMEOUT) setTime(now);
-
         });
         return () => {
           clearInterval(updateTime);
@@ -59,24 +60,27 @@ function Compare({
     }
 
     return(
-        <div>
-            Pick your option
-            <br></br>
-            <button onClick={() => {select(0)}}>
-                {options[0]}
-            </button>
-            <button onClick={() => {select(1)}}>
-                {options[1]}
-            </button>
-            <br/>
-            <button onClick={() => {randomChoice()}}>
-                Can't decide
-            </button>
-
-            <br />
-            time left {Math.floor((TIMEOUT - diff)/1000)}
-
-
+        <div className='choices'>
+            <div className="pair-decision">
+                <button onClick={() => {select(0)}}>
+                    {options[0]}
+                </button>
+                <h1 className='inbetween'>or</h1>
+                <button onClick={() => {select(1)}}>
+                    {options[1]}
+                </button>
+            </div>
+            <div className='random'>
+                <button onClick={() => {randomChoice()}}>
+                    Can't decide
+                </button>
+            </div>
+            <div className='timer'>
+                {Math.floor((TIMEOUT - diff)/1000) + 1}
+            </div>
+            <div className='bar' id='timebar' 
+            style={{width: `${(TIMEOUT - diff) / TIMEOUT * 100}%`}}
+            />
         </div>
     );
 }
