@@ -7,10 +7,6 @@ function App() {
   const [options, setOptions] = useState(["Cheese", "Potato", "Sasuage", "Bacon", "Lettuce"]);
   const [mode, changeMode] = useState("add");
 
-  // const [optionPair, compare] = useState(['', '']);
-  // const [rankedPair, rankPair] = useState(['', '']);
-  
-
   function addOption(newOp) {
     let copy = [...options];
     copy = [...copy, newOp];
@@ -23,10 +19,8 @@ function App() {
       if(options[i] !== op) {
         copy.push(options[i]);
       }
-
     }
     setOptions(copy);
-
   }
 
 
@@ -63,13 +57,18 @@ function App() {
     </>
 
   } else if (mode === "result") {
-    displayed = 
-    <p>
-      <h3>
-        Your decision is
-      </h3>
-      {options[0]}
-    </p>
+    displayed =
+    <>
+      <p>
+        <h3>
+          Your decision is
+        </h3>
+        {options[0]}
+      </p>
+      <button onClick={() => {changeMode("add"); setOptions([])}}>
+        Make another decision
+      </button>
+    </>
   }
 
   return (
