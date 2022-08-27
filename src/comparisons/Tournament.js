@@ -54,9 +54,11 @@ function getChoices() {
 function makeChoice(opt) {
   if (isFinished()) {
     console.log("Finished.");
+    return
   }
   if (!pairs.slice(0, 2).includes(opt)) {
     console.log("Invalid choice.");
+    return;
   }
   chosen.push(opt);
   eliminate.push(opt === pairs[0] ? pairs[1] : pairs[0]);
