@@ -6,7 +6,7 @@ import { setStrategy, begin, isFinished, getWinner, getChoices, makeChoice } fro
 
 function App() {
   
-  const [options, setOptions] = useState(["Cheese", "Potato", "Sasuage", "Bacon", "Lettuce"]);
+  const [options, setOptions] = useState([]);
   const [mode, changeMode] = useState("add");
   const [pair, setPair] = useState(["", ""]);
 
