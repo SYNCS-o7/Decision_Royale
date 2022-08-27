@@ -83,16 +83,14 @@ function App() {
 
   } else if (mode === "result") {
     displayed =
-    <div className='flex'>
-      <div className='text-box'>
-        <p className='result'>
-          {options[0]}
-        </p>
+    <div className='coloumn'>
+      <div className='highlighted_box'>
+        {options[0]}
       </div>
       <p className='text'>
         #1 Victory Royale
       </p>
-      <button onClick={() => {changeMode("add"); setOptions([])}}>
+      <button className='back' onClick={() => {changeMode("add"); setOptions([])}}>
         Make another decision
       </button>
     </div>
