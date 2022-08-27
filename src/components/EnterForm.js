@@ -13,13 +13,12 @@ export default function EnterForm ({ addTask }) {
         e.preventDefault();
         addTask(newOption)
         setNewOption("");
-        //e.target.reset();
     }
 
     return(
         <>
-            <form  onSubmit={handleSubmit} >
-                <input className='option_input' type="text" placeholder='Enter option' value={newOption} onChange={handleChange} />
+            <form  onSubmit={handleSubmit} className='option_input' >
+                <input type="text" placeholder='Enter Option' value={newOption} onChange={handleChange} />
             </form>
         </>
     )

@@ -1,10 +1,16 @@
 .option_input {
-    border-radius: 50px;
-    padding: 30px;
+    border-radius: 10px;
+    border: 0px;
+    background: rgba(255,255,255,0.5);
+}
+
+.option_input > input {
     text-align: center;
     font-family: 'pfont';
     font-size: 19px;
     letter-spacing: 1.5px;
-    border: 0px;
-    background: rgba(255,255,255,0.5);
+    background-color: transparent;
+    width: 95%;
+    padding: 20px 10px 20px 10px;
+    border-style: none;
 }
