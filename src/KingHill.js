@@ -15,7 +15,7 @@ function shuffle(array) {
   return array;
 }
 
-function begin(options) {
+export function begin(options) {
   if (options.length < 2) {
     console.log("Not enough options.");
   }
@@ -26,11 +26,11 @@ function begin(options) {
   oppo = options.shift();
 }
 
-function isFinished() {
+export function isFinished() {
   return remaining.length == 0;
 }
 
-function getWinner() {
+export function getWinner() {
   if (!isFinished()) {
     console.log("Not finished.");
     return;
@@ -38,7 +38,7 @@ function getWinner() {
   return king;
 }
 
-function getChoices() {
+export function getChoices() {
   if (isFinished()) {
     console.log("Finished.");
     return;
@@ -49,7 +49,7 @@ function getChoices() {
   return [king, oppo];
 }
 
-function makeChoice(opt) {
+export function makeChoice(opt) {
   if (isFinished()) {
     console.log("Finished.");
   }
