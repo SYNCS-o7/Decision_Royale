@@ -34,7 +34,7 @@ function getWinner() {
     console.log("Not finished.");
     return;
   }
-  return chosen[0];
+  return chosen;
 }
 
 function getChoices() {
@@ -43,7 +43,7 @@ function getChoices() {
     return;
   }
   if (pairs.length == 0) {
-    options = chosen.slice();
+    let options = chosen.slice();
     pairs = options.slice(0, ~~(options.length / 2) * 2);
     chosen = options.length % 2 ? [options[options.length - 1]] : [];
   }
