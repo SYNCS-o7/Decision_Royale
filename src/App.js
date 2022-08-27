@@ -37,8 +37,24 @@ function App() {
     <div className='add-section'>
       <div className='horizontal'>
 
-        <div className='text-input'>
+        <div className='buttons-section'>
           <EnterForm addTask = {addOption} />
+
+          <div className='strategy-select'>
+            <button onClick={() => {
+                setStrategy("KingHill");
+                changeMode("compare");
+                begin(options);
+                setPair(getChoices());
+              }}>Elimination</button>
+            <button onClick={() => {
+                setStrategy("Tournament");
+                changeMode("compare");
+                begin(options);
+                setPair(getChoices());}}>
+              Tournament
+            </button>
+          </div>
         </div>
 
         <div className='options-list'>
@@ -48,21 +64,6 @@ function App() {
         </div> 
       </div>
 
-      <div className='strategy-select'>
-        <button onClick={() => {
-            setStrategy("KingHill");
-            changeMode("compare");
-            begin(options);
-            setPair(getChoices());
-          }}>Elimination</button>
-        <button onClick={() => {
-            setStrategy("Tournament");
-            changeMode("compare");
-            begin(options);
-            setPair(getChoices());}}>
-          Tournament
-        </button>
-      </div>
     </div>
 
 

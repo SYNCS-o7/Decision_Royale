@@ -19,7 +19,7 @@ export default function EnterForm ({ addTask }) {
     return(
         <>
             <form  onSubmit={handleSubmit} >
-                <input className='option_input' type="text" placeholder='Enter option' id='enter_option' value={newOption} onChange={handleChange} />
+                <input className='option_input' type="text" placeholder='Enter option' value={newOption} onChange={handleChange} />
             </form>
         </>
     )

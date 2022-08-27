@@ -1,3 +1,13 @@
+@font-face {
+    font-family: hfont;
+    src: url("/public/Newake-Font-Demo.otf");
+}
+
+@font-face {
+    font-family: pfont;
+    src: url("/public/Agrandir-Grand-Light-300.otf");
+}
+
 .container {
     width: 100vw;
     height: 100vh;
@@ -7,6 +17,22 @@
     background-size: cover;
     margin: -8px;
     padding: 0;
+
+
+}
+
+.content {
+    width: 80%;
+}
+
+h1 {
+    white-space: nowrap;
+    text-align: center;
+    align-self: center;
+    font-family: 'hfont';
+    font-size: 55px;
+    letter-spacing: 4px;
+    color: white;
 }
 
 .flex {
@@ -15,25 +41,59 @@
 
     justify-content: center;
     align-items: center;
+
+    padding-top: 5vh;
 }
 
 .header {
-    font-size: 4rem;
+    font-size: 5rem;
     text-align: center;
+
+    border-style: solid;
+    border-width: 0 0 3px 0;
 }
 
 .add-section {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 .horizontal {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.buttons-section {
+    width: 30%
 }
 
 .strategy-select {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.strategy-select > button {
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'pfont';
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    border: 0px;
+    color: white;
+    margin: 2px 0 2px 0;
+    background: rgba(119, 119, 119, 0.5);
+}
+
+.strategy-select > button:hover {
+    background: rgba(72, 72, 72, 0.5);
+    transition: all ease-in 0.3s;
 }
 
 .option{
@@ -44,17 +104,19 @@
 }
 
 .options-list {
-    margin-left: auto;
-    margin-right:auto;
     min-height: 30vh;
-    min-width: 40vw;
+    width: 50%;
+
+
     background-color: rgba(255,255,255,0.4);
+    box-shadow: 0px 0px 20px #8da2c4;
     border-radius: 20px;
     padding: 5px;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    backdrop-filter: blur(14px);
 }
 
