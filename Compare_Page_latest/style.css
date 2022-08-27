@@ -1,0 +1,115 @@
+@font-face {
+    font-family: hfont;
+    src: url(Newake-Font-Demo.otf);
+}
+
+@font-face {
+    font-family: pfont;
+    src: url(Agrandir-Grand-Light-300.otf);
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-image: url(../image/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.entry_container {
+    grid-column: 1;
+    min-width: 400px;
+}
+
+.list_container {
+    align-self: right;
+    grid-column: 2;
+    outline: solid;
+    height: 100%;
+    width: 100%;
+    max-width: calc(100% - 400px);
+}
+
+h1 {
+    position: relative;
+    white-space: nowrap;
+    margin-top: 200px;
+    text-align: center;
+    align-self: center;
+    font-family: 'hfont';
+    font-size: 55px;
+    letter-spacing: 4px;
+    margin-bottom: 50px;
+    right: 150px;
+}
+
+.option_input {
+    display: block;
+    margin: auto;
+    border-radius: 15%;
+    padding: 15px;
+    width: 60%;
+    text-align: center;
+    font-family: 'pfont';
+    font-size: 19px;
+    letter-spacing: 1.5px;
+}
+
+.header {
+    position: relative;
+    top: 30px;
+    right: 30px;
+    margin-top: 30px;
+    text-align: center;
+    align-self: center;
+    font-family: 'hfont';
+    font-size: 35px;
+    letter-spacing: 4px;
+    margin-bottom: 50px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    margin-left: 13%;
+    padding: 0;
+}
+
+.option_comparison {
+    display: block;
+    position:relative;
+    top: 30px;
+    margin: auto;
+    border-radius: 20%;
+    padding: 50px;
+    width: 60%;
+    text-align: center;
+    font-family: 'pfont';
+    font-size: 19px;
+    letter-spacing: 1.5px;
+}
+
+.header2 {
+    position: relative;
+    bottom: 80px;
+    right: 30px;
+    margin-top: 30px;
+    text-align: center;
+    align-self: center;
+    font-family: 'hfont';
+    font-size: 35px;
+    letter-spacing: 4px;
+    margin-bottom: 50px;
+}
