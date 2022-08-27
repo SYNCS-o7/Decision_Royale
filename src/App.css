@@ -1,2 +1,60 @@
+.container {
+    width: 100vw;
+    height: 100vh;
 
+    background-image: url("/public/background.jpg");
+    background-position: center;
+    background-size: cover;
+    margin: -8px;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.add-section {
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.strategy-select {
+    display: flex;
+    justify-content: center;
+}
+
+.option{
+    margin: 4px auto 4px auto;
+    font-family: 'pfont';
+    font-size: 19px;
+    align-self: center;
+}
+
+.options-list {
+    margin-left: auto;
+    margin-right:auto;
+    min-height: 30vh;
+    min-width: 40vw;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 

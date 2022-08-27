@@ -16,19 +16,6 @@ function App() {
     setOptions(copy);
   }
 
-  /*
-
-  function removeOption(op) {
-    let copy = [];
-    for (let i = 0; i < options.length; i++) {
-      if(options[i] !== op) {
-        copy.push(options[i]);
-      }
-    }
-    setOptions(copy);
-  }
-  */
-
   function selectOption(op) {
     makeChoice(op);
 
@@ -47,28 +34,36 @@ function App() {
   
   if (mode === "add") {
     displayed = 
-    <>
-      <div>
-        {options.map((option) => {
-          return <div>{option}</div>;
-          })}
-      </div> 
+    <div className='add-section'>
+      <div className='horizontal'>
 
-      <EnterForm addTask = {addOption} />
-      <button onClick={() => {
-          setStrategy("KingHill");
-          changeMode("compare");
-          begin(options);
-          setPair(getChoices());
-        }}>Elimination</button>
-      <button onClick={() => {
-          setStrategy("Tournament");
-          changeMode("compare");
-          begin(options);
-          setPair(getChoices());}}>
-        Tournament
-      </button>
-    </>
+        <div className='text-input'>
+          <EnterForm addTask = {addOption} />
+        </div>
+
+        <div className='options-list'>
+          {options.map((option) => {
+            return <div className='option'>{option}</div>;
+            })}
+        </div> 
+      </div>
+
+      <div className='strategy-select'>
+        <button onClick={() => {
+            setStrategy("KingHill");
+            changeMode("compare");
+            begin(options);
+            setPair(getChoices());
+          }}>Elimination</button>
+        <button onClick={() => {
+            setStrategy("Tournament");
+            changeMode("compare");
+            begin(options);
+            setPair(getChoices());}}>
+          Tournament
+        </button>
+      </div>
+    </div>
 
 
   } else if (mode === "compare") {
@@ -101,14 +96,17 @@ function App() {
 
   return (
     
-    <div className="App">
-      <div>
-        <h1>
-          Decision Royale
-        </h1>
+    <div className="container">
+      <div className='flex'>
+          <h1 className='header'>
+            DECISION ROYALE
+          </h1>
+        <div className='content'>
+          {displayed}
+        </div>
       </div>
+    
 
-      {displayed}
     
     </div>
   );

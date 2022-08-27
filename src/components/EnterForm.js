@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './EnterForm.css';
 
 
 export default function EnterForm ({ addTask }) {
@@ -17,8 +18,8 @@ export default function EnterForm ({ addTask }) {
 
     return(
         <>
-            <form onSubmit={handleSubmit}>
-                <input value={newOption} type="text" onChange={handleChange} placeholder="Enter task..."/>
+            <form  onSubmit={handleSubmit} >
+                <input className='option_input' type="text" placeholder='Enter option' id='enter_option' value={newOption} onChange={handleChange} />
             </form>
         </>
     )
