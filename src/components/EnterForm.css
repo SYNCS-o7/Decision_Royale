@@ -1,8 +1,8 @@
 .option_input {
-    display: inline;
     border-radius: 20px;
     padding: 15px;
-    width: 60%;
+    width: 20vw;
+    margin-right: 30px;
     text-align: center;
     font-family: 'pfont';
     font-size: 19px;
