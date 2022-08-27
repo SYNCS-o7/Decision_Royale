@@ -22,34 +22,32 @@ html, body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
+    background-color: #464646;
+    background-attachment: fixed;
 }
 
-.entry_container {
-    grid-column: 1;
-    min-width: 400px;
-}
-
-.list_container {
-    align-self: right;
-    grid-column: 2;
-    outline: solid;
-    height: 100%;
-    width: 100%;
-    max-width: calc(100% - 400px);
+.contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
-    position: relative;
     white-space: nowrap;
-    margin-top: 200px;
     text-align: center;
     align-self: center;
     font-family: 'hfont';
     font-size: 55px;
     letter-spacing: 4px;
-    margin-bottom: 50px;
-    right: 150px;
+    color: white;
+}
+
+.choices {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .option_input {
@@ -64,52 +62,96 @@ h1 {
     letter-spacing: 1.5px;
 }
 
-.header {
-    position: relative;
-    top: 30px;
-    right: 30px;
-    margin-top: 30px;
-    text-align: center;
-    align-self: center;
-    font-family: 'hfont';
-    font-size: 35px;
-    letter-spacing: 4px;
-    margin-bottom: 50px;
-}
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    margin-left: 13%;
-    padding: 0;
-}
-
 .option_comparison {
     display: block;
-    position:relative;
-    top: 30px;
-    margin: auto;
-    border-radius: 20%;
-    padding: 50px;
-    width: 60%;
+    border-radius: 20px;
+    width: 30%;
+    padding: 30px;
     text-align: center;
     font-family: 'pfont';
     font-size: 19px;
     letter-spacing: 1.5px;
+    border: 0px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 0px 20px #8da2c4;
+    transition: all ease-in-out 0.2;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(14px);
 }
 
-.header2 {
-    position: relative;
-    bottom: 80px;
-    right: 30px;
-    margin-top: 30px;
+.option_comparison:hover {
+    opacity: 0.5;
+    transition: opacity ease-in-out 0.5;
+}
+
+.option_comparison:focus {
+    outline: none;
+}
+
+.bolded_text{
     text-align: center;
-    align-self: center;
     font-family: 'hfont';
     font-size: 35px;
     letter-spacing: 4px;
-    margin-bottom: 50px;
 }
+
+.header{
+    margin-top: 20%;
+    text-align: center;
+    font-family: 'hfont';
+    font-size: 75px;
+    letter-spacing: 4px;
+    margin-bottom: 25%;
+}
+
+.light_text{
+    text-align: center;
+    font-family: 'pfont';
+    font-size: 30px;
+    letter-spacing: 0px;
+}
+
+button {
+    display: block;
+    border-radius: 20px;
+    margin-top: 50px;
+    font-family: 'pfont';
+
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(14px);
+    box-shadow: 0px 0px 20px #8da2c4;
+    transition: all ease-in-out 0.2;
+}
+
+
+.option_comparison {
+    width: 30%;
+    padding: 30px;
+    text-align: center;
+    font-family: 'pfont';
+    font-size: 19px;
+    letter-spacing: 1.5px;
+    border: 0px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 0px 20px #8da2c4;
+    transition: all ease-in-out 0.2;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(14px);
+}
+
+
