@@ -23,24 +23,24 @@ function App() {
       if(options[i] !== rankedPair[1]) {
         copy.push(options[i]);
       }
-
     }
     setOptions(copy);
   }
 
   const beginComparing = () => {
+    compare([options[0], options[1]]);
+    changeMode("compare");
+  }
+  
+  const optionSelected = () => {
+    console.log("Selected " , rankedPair[0]);
+    removeOption(rankedPair[1]);
 
     if (options.length <= 1) {
       changeMode("result");
       return;
     }
     compare([options[0], options[1]]);
-  }
-  
-  const optionSelected = () => {
-    console.log("Selected " , rankedPair[0]);
-    removeOption(rankedPair[1]);
-    beginComparing();
   }
 
   let displayed = <></>;
@@ -54,7 +54,7 @@ function App() {
       </div> 
 
       <EnterForm addTask = {addOption} />
-      <button onClick={() => {changeMode("compare"); beginComparing()}}>Ready to decide</button>
+      <button onClick={() => {beginComparing()}}>Ready to decide</button>
     </>
 
 
