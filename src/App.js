@@ -31,8 +31,14 @@ function App() {
   }
 
   let displayed = <></>;
+  let info = <></>;
   
   if (mode === "add") {
+    info = 
+    <>
+      Stuck making a decision? 
+      Just enter all the options and click elimination or tournament. 
+    </>
     displayed = 
     <div className='add-section'>
       <div className='horizontal'>
@@ -72,7 +78,8 @@ function App() {
       changeMode("result");
       return;
     }
-
+    
+    info =<>Pick your preference!</>;
 
     displayed =
     <>
@@ -82,6 +89,9 @@ function App() {
     </>
 
   } else if (mode === "result") {
+
+    info =<>🎉 You just made the best decision 🎉</>;
+
     displayed =
     <div className='coloumn'>
       <div className='highlighted_box'>
@@ -101,10 +111,13 @@ function App() {
     <div className="container">
       <div className='flex'>
           <h1 className='header'>
-            DECISION ROYALE
+            DECISION <wbr/> ROYALE
           </h1>
         <div className='content'>
           {displayed}
+        </div>
+        <div className='info text'>
+          {info}
         </div>
       </div>
     </div>

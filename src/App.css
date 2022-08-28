@@ -13,16 +13,20 @@
     height: 100vh;
 
     background-image: url("/public/background.jpg");
-    background-position: center;
+    background-position:absolute;
+    position: fixed;
     background-size: cover;
+    object-fit: cover;
     margin: -8px;
     padding: 0;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.1);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
 
 }
 
 .content {
     width: 80%;
+
+    margin-bottom: 50px;
 }
 
 h1 {
@@ -197,4 +201,10 @@ h1 {
 .back:hover {
     background: rgba(75, 75, 75, 0.9);
     transition: all ease 0.3s;
+}
+
+.info.text {
+
+    font-size: 20px;
+    max-width: 80vw;
 }
