@@ -17,7 +17,7 @@ function App() {
   function changeModeWrapper(newMode) {
     if (mode === "add" 
     && newMode === "compare" 
-    && options.length < 3) {
+    && options.length < 2) {
       // notify();
       toast.error("Enter 2 or more options :).")
       return;
