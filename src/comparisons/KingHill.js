@@ -27,7 +27,7 @@ export function begin_king(options) {
 }
 
 export function isFinished_king() {
-  return remaining.length == 0;
+  return oppo == null && remaining.length == 0;
 }
 
 export function getWinner_king() {
