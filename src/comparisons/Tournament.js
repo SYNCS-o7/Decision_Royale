@@ -4,7 +4,7 @@ var eliminate;
 
 function shuffle(array) {
   var currentIndex = array.length, randomIndex;
-  while (currentIndex != 0) {
+  while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
     [array[currentIndex], array[randomIndex]] = [
@@ -19,14 +19,14 @@ function begin_tour(options) {
     console.log("Not enough options.");
   }
   options = options.slice();
-  // shuffle(options);
+  shuffle(options);
   remaining = options.slice(0, ~~(options.length / 2) * 2);
   chosen = options.length % 2 ? [options[options.length - 1]] : [];
   eliminate = [];
 }
 
 function isFinished_tour() {
-  return remaining.length == 0 && chosen.length == 1;
+  return remaining.length === 0 && chosen.length === 1;
 }
 
 function getWinner_tour() {
@@ -42,7 +42,7 @@ function getChoices_tour() {
     console.log("Finished.");
     return;
   }
-  if (remaining.length == 0) {
+  if (remaining.length === 0) {
     let options = chosen.slice();
     remaining = options.slice(0, ~~(options.length / 2) * 2);
     chosen = options.length % 2 ? [options[options.length - 1]] : [];
