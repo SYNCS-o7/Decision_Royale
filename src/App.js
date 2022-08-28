@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Compare from './components/Compare';
 import EnterForm from './components/EnterForm';
 import { setStrategy, begin, isFinished, getWinner, getChoices, makeChoice } from './comparisons/Comparisons.js';

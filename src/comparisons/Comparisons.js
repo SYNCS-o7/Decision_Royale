@@ -18,7 +18,7 @@ function isFinished() {
     if (strategy === "Tournament")
         return isFinished_tour();
     else if (strategy === "KingHill")
-       return getWinner_king(); 
+       return isFinished_king(); 
 }
 
 function getWinner() {
