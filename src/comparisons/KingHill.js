@@ -5,7 +5,7 @@ var oppo;
 
 function shuffle(array) {
   var currentIndex = array.length, randomIndex;
-  while (currentIndex != 0) {
+  while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
     [array[currentIndex], array[randomIndex]] = [
@@ -27,7 +27,7 @@ export function begin_king(options) {
 }
 
 export function isFinished_king() {
-  return remaining.length == 0;
+  return oppo == null && remaining.length === 0;
 }
 
 export function getWinner_king() {
@@ -43,7 +43,7 @@ export function getChoices_king() {
     console.log("Finished.");
     return;
   }
-  if (oppo == null) {
+  if (oppo === null) {
     oppo = remaining.shift();
   }
   return [king, oppo];

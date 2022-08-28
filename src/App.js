@@ -1,14 +1,30 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Compare from './components/Compare';
 import EnterForm from './components/EnterForm';
 import { setStrategy, begin, isFinished, getWinner, getChoices, makeChoice } from './comparisons/Comparisons.js';
+
+import toast, { Toaster } from 'react-hot-toast';
+
+// const notify = () => toast('Here is your toast.');
 
 function App() {
   
   const [options, setOptions] = useState([]);
   const [mode, changeMode] = useState("add");
   const [pair, setPair] = useState(["", ""]);
+  
+  function changeModeWrapper(newMode) {
+    if (mode === "add" 
+    && newMode === "compare" 
+    && options.length < 2) {
+      // notify();
+      toast.error("Enter 2 or more options :).")
+      return;
+    }
+
+    changeMode(newMode);
+  }
 
   function addOption(newOp) {
     let copy = [...options];
@@ -21,7 +37,7 @@ function App() {
 
     if (isFinished()) {
       setOptions([getWinner()]);
-      changeMode("result");
+      changeModeWrapper("result");
       return;
     }
 
@@ -49,13 +65,13 @@ function App() {
           <div className='strategy-select'>
             <button onClick={() => {
                 setStrategy("KingHill");
-                changeMode("compare");
+                changeModeWrapper("compare");
                 begin(options);
                 setPair(getChoices());
               }}>Elimination</button>
             <button onClick={() => {
                 setStrategy("Tournament");
-                changeMode("compare");
+                changeModeWrapper("compare");
                 begin(options);
                 setPair(getChoices());}}>
               Tournament
@@ -75,7 +91,7 @@ function App() {
 
   } else if (mode === "compare") {
     if (options.length <= 1) {
-      changeMode("result");
+      changeModeWrapper("result");
       return;
     }
     
@@ -100,27 +116,31 @@ function App() {
       <p className='text'>
         #1 Victory Royale
       </p>
-      <button className='back' onClick={() => {changeMode("add"); setOptions([])}}>
+      <button className='back' onClick={() => {changeModeWrapper("add"); setOptions([])}}>
         Make another decision
       </button>
     </div>
   }
 
   return (
-    
-    <div className="container">
-      <div className='flex'>
-          <h1 className='header'>
-            DECISION <wbr/> ROYALE
-          </h1>
-        <div className='content'>
-          {displayed}
-        </div>
-        <div className='info text'>
-          {info}
+    <>
+      <Toaster />
+      <div className="container">
+        
+
+        <div className='flex'>
+            <h1 className='header'>
+              DECISION <wbr/> ROYALE
+            </h1>
+          <div className='content'>
+            {displayed}
+          </div>
+          <div className='info text'>
+            {info}
+          </div>
         </div>
       </div>
-    </div>
+    </>    
   );
 }
 
