@@ -9,18 +9,44 @@ function Compare({
     const [time, setTime] = useState(new Date().getTime());
     const [diff, setDiff] = useState(0);
 
+    const select = (n) => {
+        let now = new Date().getTime();
+        setTime(now);
+        setDiff(0);
+        selectOption(options[n]);
+    }  
+
+    const randomChoice = () => {
+        let choice = Math.round(Math.random());
+        console.log("random selecting ", choice);
+        select(choice);
+    }
+
+
     useEffect(() => {
+        
+
         var updateTime = setInterval(() => {
 
             let now = new Date().getTime();
             setDiff(now - time);
-
-            if (diff >= TIMEOUT) setTime(now);
+            // if (diff >= TIMEOUT) setTime(now);
         });
+
+        
+
         return () => {
           clearInterval(updateTime);
         }
       }, [time]);
+
+    useEffect(() => {
+        if (diff >= TIMEOUT) {
+            console.log("timeout made random choice");
+            console.log("diff is", diff);
+            randomChoice();
+        }
+    });
 
 
     useEffect(() => {
@@ -43,21 +69,7 @@ function Compare({
         };
     }, [options]);
 
-    const select = (n) => {
-        let now = new Date().getTime();
-        setTime(now);
-        setDiff(0);
-        selectOption(options[n]);
-    }
-
-    const randomChoice = () => {
-        let choice = Math.round(Math.random());
-        select(choice);
-    }
-
-    if (diff >= TIMEOUT) {
-        randomChoice();
-    }
+    
 
     let active = 'begin';
     if (diff > 100) {
