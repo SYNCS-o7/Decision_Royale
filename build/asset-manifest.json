@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.1ad091ff.css",
-    "main.js": "./static/js/main.ab70a0ff.js",
+    "main.css": "./static/css/main.ccfb0f6d.css",
+    "main.js": "./static/js/main.3c33bb46.js",
     "static/media/background.jpg": "./static/media/background.f463fa1f44cb12e1dd86.jpg",
     "static/media/Newake-Font-Demo.otf": "./static/media/Newake-Font-Demo.d583d6567183791da8fb.otf",
     "static/media/Agrandir-Grand-Light-300.otf": "./static/media/Agrandir-Grand-Light-300.6dd1904501ff5df803ea.otf",
     "index.html": "./index.html",
-    "main.1ad091ff.css.map": "./static/css/main.1ad091ff.css.map",
-    "main.ab70a0ff.js.map": "./static/js/main.ab70a0ff.js.map"
+    "main.ccfb0f6d.css.map": "./static/css/main.ccfb0f6d.css.map",
+    "main.3c33bb46.js.map": "./static/js/main.3c33bb46.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ad091ff.css",
-    "static/js/main.ab70a0ff.js"
+    "static/css/main.ccfb0f6d.css",
+    "static/js/main.3c33bb46.js"
   ]
 }
