@@ -5,7 +5,7 @@ function Compare({
     options,
     selectOption
 }) {
-    const TIMEOUT = 90000;
+    const TIMEOUT = 5000;
     const [time, setTime] = useState(new Date().getTime());
     const [diff, setDiff] = useState(0);
 
