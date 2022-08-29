@@ -9,14 +9,12 @@
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
+    max-width: 100vw;
+    min-height: 100vh;
 
     background-image: url("/public/background.jpg");
     background-position:absolute;
-    position: fixed;
     background-size: cover;
-    object-fit: cover;
     margin: -8px;
     padding: 0;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
@@ -30,7 +28,6 @@
 }
 
 h1 {
-    white-space: nowrap;
     text-align: center;
     align-self: center;
     font-family: 'hfont';
@@ -61,7 +58,6 @@ h1 {
 }
 
 .add-section {
-    width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -138,15 +134,18 @@ h1 {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
 }
 
 .highlighted_box {
     border-radius: 20px;
     font-family: 'hfont';
 
+    width: 80%;
+    padding: 30px 10% 30px 10%;
+
     background-color: white; /* Green */
     color: white;
-    padding: 40px 250px;
     text-align: center;
     text-decoration: none;
     font-size: 40px;
@@ -187,7 +186,7 @@ h1 {
     background-color: white; /* Green */
     border: none;
     color: white;
-    padding: 15px 100px;
+    padding: 15px 15%;
     text-align: center;
     text-decoration: none;
     font-size: 20px;
@@ -207,4 +206,30 @@ h1 {
 
     font-size: 20px;
     max-width: 80vw;
+}
+
+@media screen and (max-width: 650px) {
+    .horizontal {
+       flex-direction: column-reverse; 
+       justify-content: flex-start;
+       align-items: center;
+    
+    }
+
+    .options-list {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .buttons-section {
+        width: 100%;
+    }
+
+    .strategy-select {
+        width: 85%;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
