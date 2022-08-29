@@ -9,7 +9,7 @@
 }
 
 .container {
-    width: 100vw;
+    max-width: 100vw;
     min-height: 100vh;
 
     background-image: url("/public/background.jpg");
@@ -28,7 +28,6 @@
 }
 
 h1 {
-    white-space: nowrap;
     text-align: center;
     align-self: center;
     font-family: 'hfont';
@@ -59,7 +58,6 @@ h1 {
 }
 
 .add-section {
-    width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -136,15 +134,18 @@ h1 {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
 }
 
 .highlighted_box {
     border-radius: 20px;
     font-family: 'hfont';
 
+    width: 80%;
+    padding: 30px 10% 30px 10%;
+
     background-color: white; /* Green */
     color: white;
-    padding: 40px 250px;
     text-align: center;
     text-decoration: none;
     font-size: 40px;
@@ -185,7 +186,7 @@ h1 {
     background-color: white; /* Green */
     border: none;
     color: white;
-    padding: 15px 100px;
+    padding: 15px 15%;
     text-align: center;
     text-decoration: none;
     font-size: 20px;
@@ -212,10 +213,23 @@ h1 {
        flex-direction: column-reverse; 
        justify-content: flex-start;
        align-items: center;
+    
     }
 
     .options-list {
         width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .buttons-section {
+        width: 100%;
+    }
+
+    .strategy-select {
+        width: 85%;
+
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }

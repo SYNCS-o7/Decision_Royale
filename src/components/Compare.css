@@ -1,16 +1,16 @@
 .choices {
     display: flex;
     flex-direction: column;
-
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
 }
 
 .pair-decision {
     display: flex;
     justify-content: center;
-
     margin-bottom: 10px;
+    width: 100%;
 
 }
 
@@ -24,7 +24,7 @@
 
 .pair-decision > button {
     padding: 30px 50px 30px 50px;
-    min-width: 40%;
+    min-width: 35%;
     border-radius: 50px;
     text-align: center;
     font-family: 'pfont';
@@ -75,4 +75,16 @@
 .bar {
     height: 5px;
     background-color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 650px) {
+
+    .pair-decision {
+        flex-direction: column;
+    }
+
+    .inbetween {
+        margin: 20px 0 20px 0;
+    }
+
 }

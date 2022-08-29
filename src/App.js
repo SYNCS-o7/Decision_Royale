@@ -99,7 +99,6 @@ function App() {
 
     displayed =
     <>
-      <div className='space' />
       <h1 class="light_text">Choose your preference.</h1>
       <Compare options={ pair } selectOption={ selectOption }/>
     </>
@@ -130,7 +129,7 @@ function App() {
 
         <div className='flex'>
             <h1 className='header'>
-              DECISION <wbr/> ROYALE
+              DECISION ROYALE
             </h1>
           <div className='content'>
             {displayed}
