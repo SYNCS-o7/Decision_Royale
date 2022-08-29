@@ -44,6 +44,7 @@ function App() {
     let choices = getChoices();
     console.log(choices);
     setPair(choices);
+    console.log(choices);
   }
 
   let displayed = <></>;
